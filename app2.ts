@@ -57,11 +57,11 @@ class Pessoa {
         return this.carroPreferido 
     }
 
-    public comprarCarro(carro: any): void {
+    public comprarCarro(carro: Carro): void {
         this.carro = carro
     }
 
-    public dizerCarroQueTem(): any {
+    public dizerCarroQueTem(): Carro {
         return this.carro
     }
 }
@@ -81,4 +81,18 @@ let listaDeCarros: Array<Carro> = [ carroA, carroB, carroC ]
 let concessionária = new Concessionaria('Rua dos Tabajaras', listaDeCarros)
 
 // exibir lista de carros
-console.log(concessionária.mostrarListaDeCarros())
+// console.log(concessionária.mostrarListaDeCarros())
+
+// comprar carro
+let cliente = new Pessoa('Alisson', 'Veloster')
+
+concessionária.mostrarListaDeCarros().map(( carro: Carro) => {
+
+    if (carro['modelo'] == cliente.dizerCarroPreferido()) {
+
+        // comprar o carro
+        cliente.comprarCarro(carro)
+    }
+})
+
+ console.log(cliente.dizerCarroQueTem())
