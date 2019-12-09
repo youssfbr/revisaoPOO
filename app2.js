@@ -1,56 +1,12 @@
-var Carro = /** @class */ (function () {
-    function Carro(modelo, numeroDePortas) {
-        this.velocidade = 0;
-        this.modelo = modelo;
-        this.numeroDePortas = numeroDePortas;
-    }
-    Carro.prototype.acelerar = function () {
-        this.velocidade += 10;
-    };
-    Carro.prototype.parar = function () {
-        this.velocidade = 0;
-    };
-    Carro.prototype.velocidadeAtual = function () {
-        return this.velocidade;
-    };
-    return Carro;
-}());
-var Concessionaria = /** @class */ (function () {
-    function Concessionaria(endereco, listaDeCarros) {
-        this.endereco = endereco;
-        this.ListaDeCarros = listaDeCarros;
-    }
-    Concessionaria.prototype.fornecedorEndereco = function () {
-        return this.endereco;
-    };
-    Concessionaria.prototype.mostrarListaDeCarros = function () {
-        return this.ListaDeCarros;
-    };
-    return Concessionaria;
-}());
-var Pessoa = /** @class */ (function () {
-    function Pessoa(nome, carroPreferido) {
-        this.nome = nome;
-        this.carroPreferido = carroPreferido;
-    }
-    Pessoa.prototype.dizerNome = function () {
-        return this.nome;
-    };
-    Pessoa.prototype.dizerCarroPreferido = function () {
-        return this.carroPreferido;
-    };
-    Pessoa.prototype.comprarCarro = function (carro) {
-        this.carro = carro;
-    };
-    Pessoa.prototype.dizerCarroQueTem = function () {
-        return this.carro;
-    };
-    return Pessoa;
-}());
+"use strict";
+exports.__esModule = true;
+var Carro_1 = require("./Carro");
+var Pessoa_1 = require("./Pessoa");
+var Concessionaria_1 = require("./Concessionaria");
 // Criar carros
-var carroA = new Carro('Dodge Journey', 4);
-var carroB = new Carro('Veloster', 3);
-var carroC = new Carro('Cerato', 4);
+var carroA = new Carro_1["default"]('Dodge Journey', 4);
+var carroB = new Carro_1["default"]('Veloster', 3);
+var carroC = new Carro_1["default"]('Cerato', 4);
 /*
     Agora... Colocar esses objetos dentro de um array
     e... associar esse array de objetos do tipo carro
@@ -58,11 +14,11 @@ var carroC = new Carro('Cerato', 4);
 */
 // Criar array, montar a lista de carros da concessionária
 var listaDeCarros = [carroA, carroB, carroC];
-var concessionária = new Concessionaria('Rua dos Tabajaras', listaDeCarros);
+var concessionária = new Concessionaria_1["default"]('Rua dos Tabajaras', listaDeCarros);
 // exibir lista de carros
 // console.log(concessionária.mostrarListaDeCarros())
 // comprar carro
-var cliente = new Pessoa('Alisson', 'Veloster');
+var cliente = new Pessoa_1["default"]('Alisson', 'Veloster');
 concessionária.mostrarListaDeCarros().map(function (carro) {
     if (carro['modelo'] == cliente.dizerCarroPreferido()) {
         // comprar o carro
