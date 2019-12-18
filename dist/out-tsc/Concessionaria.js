@@ -1,5 +1,3 @@
-"use strict";
-exports.__esModule = true;
 var Concessionaria = /** @class */ (function () {
     function Concessionaria(endereco, listaDeCarros) {
         this.endereco = endereco;
@@ -17,4 +15,5 @@ var Concessionaria = /** @class */ (function () {
     };
     return Concessionaria;
 }());
-exports["default"] = Concessionaria;
+export default Concessionaria;
+//# sourceMappingURL=Concessionaria.js.map
